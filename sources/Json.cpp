@@ -1,3 +1,4 @@
+//Copyright 2019 <VladDarb2000>
 #include <Json.hpp>
 Json::Json(const string& s) {
     unsigned int i = 0;

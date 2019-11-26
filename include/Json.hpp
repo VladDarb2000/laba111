@@ -1,3 +1,4 @@
+//Copyright 2019 <VladDarb2000>
 #ifndef INCLUDE_JSON_HPP_
 #define INCLUDE_JSON_HPP_
 

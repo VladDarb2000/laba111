@@ -1,3 +1,4 @@
+//Copyright 2019 <VladDarb2000>
 #include <iostream>
 #include <fstream>
 #include <nlohmann/json.hpp>
@@ -15,7 +16,7 @@ int main() {
     o << "[\n";
     for (int i = 0; i < 3; i++) {
         o << "    "  << "{ \"ticker\" : " << arr1[i] << ", \"id\": "
-                                                        ""<< arr2[i] <<", \"description\": " << arr3[i] << "}";
+    ""<< arr2[i] <<", \"description\": " << arr3[i] << "}";
         if (i != 2) o << ",";
         o << "\n";
     }
