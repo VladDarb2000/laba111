@@ -2,7 +2,7 @@
 #include <gtest/gtest.h>
 #include <Json.hpp>
 TEST(Parse, Text){
-std::string json = "{ \"lastname\" : \"Ivanov\" , \"firstname\" : \"Ivan\" "
+    std::string json = "{ \"lastname\" : \"Ivanov\" , \"firstname\" : \"Ivan\" "
                    ",  \"age\" : 25 , \"islegal\" : false , \"marks\""
                    " : [ 4 , 5 , 5 , 5 , 2 , 3 ] , \"address\" : {  "
                    "\"city\" :"" \"Moscow\" ,  \"street\" :"
