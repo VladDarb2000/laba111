@@ -56,7 +56,7 @@ Json Json::parseFile(const std::string& path_to_file){
 }
 
 unsigned int Json::pass(unsigned int i, const string& s) {
-    for(;i < s.length(); ++i){
+    for (; i < s.length(); ++i){
         if (s[i] != ' ' && s[i] != ',')
             break;
     }
@@ -82,15 +82,14 @@ string Json:: word_check(unsigned int &i, const string& s) {
 unsigned int Json:: closing_bracket(unsigned int i, const string& s) {
     unsigned int open_bracket = 1 , close_bracket = 0;
     char first, second;
-    if(s[i] == '{') {
+    if (s[i] == '{') {
         first = '{';
         second = '}';
-    }
-    else if (s[i] == '[') {
+    } else if (s[i] == '[') {
         first = '[';
         second = ']';
     }
-    while ( close_bracket != open_bracket && i < s.length()) {
+    while (close_bracket != open_bracket && i < s.length()) {
         i++;
         if (s[i] == first) open_bracket++;
         else if (s[i] == second) close_bracket++;
@@ -126,19 +125,17 @@ void Json::create_map(const string& s) {
             word = word_check(i, s);
             i = pass(i, s);
             this->json_map[key] = word;
-        }
-        else if (s[i] == '{') {
+        } else if (s[i] == '{') {
             string wd;
-            unsigned int n = closing_bracket (i, s);
+            unsigned int n = closing_bracket(i, s);
             if (n == s.length())
                 throw std::logic_error("not our line");
             wd = s.substr(i, n - i + 1);
             Json obj(wd);
             this->json_map[key] = obj.json_map;
             i += wd.length();
-        }
-        else if (std::isdigit(static_cast<unsigned char>(s[i])) ||
-                 (s[i] == '-' && std::isdigit(static_cast<unsigned char>(s[i + 1]))))
+        } else if (std::isdigit(static_cast<unsigned char>(s[i])) ||
+        (s[i] == '-' && std::isdigit(static_cast<unsigned char>(s[i + 1]))))
         {
             string num = read_number(i, s);
             i += num.length();
@@ -149,8 +146,7 @@ void Json::create_map(const string& s) {
             } else {
                 this->json_map[key] = d;
             }
-        }
-        else if (s[i] == '[') {
+        } else if (s[i] == '[') {
             string wd;
             unsigned int n = closing_bracket(i, s);
             if (n == s.length())
@@ -159,8 +155,7 @@ void Json::create_map(const string& s) {
             Json obj(wd);
             this->json_map[key] = obj.json_arr;
             i += wd.length();
-        }
-        else if ((s[i] == 't' && s[i + 3] == 'e')
+        } else if ((s[i] == 't' && s[i + 3] == 'e')
    || (s[i] == 'f' && s[i + 3] == 's' && s[i + 4] == 'e')) {
             bool x;
             if (s[i] == 't') {
@@ -180,15 +175,14 @@ void Json::create_map(const string& s) {
 void Json::create_vector(const string& s) {
     unsigned int i = 1;
     while (i < s.find_last_of(']')) {
-        pass (i, s);
+        pass(i, s);
 
        if (s[i] == '\"') {
-            string word;
-            word = word_check(i, s);
-            i = pass(i, s);
-            this->json_arr.emplace_back(word);
-        }
-        else if (s[i] == '{') {
+           string word;
+           word = word_check(i, s);
+           i = pass(i, s);
+           this->json_arr.emplace_back(word);
+       } else if (s[i] == '{') {
             string wd;
             unsigned int n = closing_bracket(i, s);
             if (n == s.length())
@@ -197,8 +191,7 @@ void Json::create_vector(const string& s) {
             Json obj(wd);
             this->json_arr.emplace_back(obj.json_map);
             i += wd.length();
-        }
-        else if (std::isdigit(static_cast<unsigned char>(s[i]))||
+        } else if (std::isdigit(static_cast<unsigned char>(s[i]))||
                  (s[i] == '-' && std::isdigit(static_cast<unsigned char>(s[i + 1])))){
             string num = read_number(i, s);
             i += num.length();
@@ -209,8 +202,7 @@ void Json::create_vector(const string& s) {
             } else {
                 this->json_arr.emplace_back(d);
             }
-        }
-        else if (s[i] == '[') {
+        } else if (s[i] == '[') {
             string wd;
             unsigned int n = closing_bracket(i, s);
             if (n == s.length())
@@ -219,15 +211,13 @@ void Json::create_vector(const string& s) {
             Json obj(wd);
             this->json_arr.emplace_back(obj.json_arr);
             i += wd.length();
-        }
-        else if ((s[i] == 't' && s[i + 3] == 'e') ||
+        } else if ((s[i] == 't' && s[i + 3] == 'e') ||
        (s[i] == 'f' &&  s[i + 3] == 's' && s[i + 4] == 'e')) {
             bool x;
             if (s[i] == 't') {
                 i += 4;
                 x = true;
-            }
-            else if( s[i] == 'f') {
+            } else if (s[i] == 'f') {
                 i += 5;
                 x = false;
             }
