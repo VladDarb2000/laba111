@@ -123,8 +123,8 @@ void Json::create_vector(const string& s) {
             i = skip_spaces(i, s);
             this->json_arr.emplace_back(word);
         } else if ((s[i] == 't' && s[i + 1] == 'r' && s[i + 2] == 'u'
-                    && s[i + 3] == 'e') || (s[i] == 'f' && s[i + 1] == 'a'
-                                            && s[i + 2] == 'l' && s[i + 3] == 's' && s[i + 4] == 'e')) {
+            && s[i + 3] == 'e') || (s[i] == 'f' && s[i + 1] == 'a'
+   && s[i + 2] == 'l' && s[i + 3] == 's' && s[i + 4] == 'e')) {
             bool x;
             if (s[i] == 't') {
                 i += 4;
@@ -144,7 +144,7 @@ void Json::create_vector(const string& s) {
             this->json_arr.emplace_back(obj.json_arr);
             i += s1.length();
         } else if (std::isdigit(static_cast<unsigned char>(s[i]))||
-                   (s[i] == '-'  && std::isdigit(static_cast<unsigned char>(s[i + 1])))) {
+   (s[i] == '-'  && std::isdigit(static_cast<unsigned char>(s[i + 1])))) {
             string num = cut_num(i, s);
             i += num.length();
             double d = stod(num);
@@ -185,8 +185,8 @@ void Json::create_map(const string& s) {
             i = skip_spaces(i, s);
             this->json_map[key] = word;
         } else if ((s[i] == 't' && s[i + 1] == 'r' && s[i + 2] == 'u'
-                    && s[i + 3] == 'e') || (s[i] == 'f' && s[i + 1] == 'a'
-                                            && s[i + 2] == 'l' && s[i + 3] == 's' && s[i + 4] == 'e')) {
+        && s[i + 3] == 'e') || (s[i] == 'f' && s[i + 1] == 'a'
+  && s[i + 2] == 'l' && s[i + 3] == 's' && s[i + 4] == 'e')) {
             bool x;
             if (s[i] == 't') {
                 i += 4;
@@ -207,7 +207,7 @@ void Json::create_map(const string& s) {
             this->json_map[key] = obj.json_arr;
             i += s1.length();
         } else if (std::isdigit(static_cast<unsigned char>(s[i])) ||
-                   (s[i] == '-' && std::isdigit(static_cast<unsigned char>(s[i + 1])))) {
+      (s[i] == '-' && std::isdigit(static_cast<unsigned char>(s[i + 1])))) {
             string num = cut_num(i, s);
             i += num.length();
             double d = stod(num);
