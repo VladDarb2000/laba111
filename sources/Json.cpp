@@ -135,8 +135,7 @@ void Json::create_map(const string& s) {
             this->json_map[key] = obj.json_map;
             i += wd.length();
         } else if (std::isdigit(static_cast<unsigned char>(s[i])) ||
-        (s[i] == '-' && std::isdigit(static_cast<unsigned char>(s[i + 1]))))
-        {
+        (s[i] == '-' && std::isdigit(static_cast<unsigned char>(s[i + 1])))) {
             string num = read_number(i, s);
             i += num.length();
             double d = stod(num);
@@ -192,7 +191,7 @@ void Json::create_vector(const string& s) {
             this->json_arr.emplace_back(obj.json_map);
             i += wd.length();
         } else if (std::isdigit(static_cast<unsigned char>(s[i]))||
-                 (s[i] == '-' && std::isdigit(static_cast<unsigned char>(s[i + 1])))){
+        (s[i] == '-' && std::isdigit(static_cast<unsigned char>(s[i + 1])))){
             string num = read_number(i, s);
             i += num.length();
             double d = stod(num);
