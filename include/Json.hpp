@@ -45,13 +45,13 @@ public:
 
     static Json parseFile(const string& path_to_file);
 
-    static unsigned int skip_spaces(unsigned int i, const string& s);
+    static unsigned int pass (unsigned int i, const string& s);
 
-    static string read_word(unsigned int &i, const string& s);
+    static string word_check (unsigned int &i, const string& s);
 
-    static unsigned int find_end(unsigned int i, const string& s);
+    static unsigned int closing_bracket (unsigned int i, const string& s);
 
-    static string cut_num(unsigned int i, const string& s);
+    static string read_number (unsigned int i, const string& s);
 };
 
 #endif // INCLUDE_JSON_HPP_
