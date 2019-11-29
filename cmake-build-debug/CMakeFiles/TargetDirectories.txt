@@ -1,5 +1,7 @@
 /cygdrive/c/Labaplus/lab-01-parser/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/cygdrive/c/Labaplus/lab-01-parser/cmake-build-debug/CMakeFiles/test.dir
-/cygdrive/c/Labaplus/lab-01-parser/cmake-build-debug/CMakeFiles/edit_cache.dir
-/cygdrive/c/Labaplus/lab-01-parser/cmake-build-debug/CMakeFiles/template.dir
 /cygdrive/c/Labaplus/lab-01-parser/cmake-build-debug/CMakeFiles/tests.dir
+/cygdrive/c/Labaplus/lab-01-parser/cmake-build-debug/CMakeFiles/main.dir
+/cygdrive/c/Labaplus/lab-01-parser/cmake-build-debug/CMakeFiles/edit_cache.dir
+/cygdrive/c/Labaplus/lab-01-parser/cmake-build-debug/CMakeFiles/Json.dir
+/cygdrive/c/Labaplus/lab-01-parser/cmake-build-debug/CMakeFiles/source.dir
+/cygdrive/c/Labaplus/lab-01-parser/cmake-build-debug/CMakeFiles/test.dir

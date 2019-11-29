@@ -5,4 +5,4 @@
 # This file includes the relevant testing commands required for 
 # testing this directory and lists subdirectories to be tested as well.
 add_test(unit_tests "/cygdrive/c/Labaplus/lab-01-parser/cmake-build-debug/tests.exe")
-set_tests_properties(unit_tests PROPERTIES  _BACKTRACE_TRIPLES "/cygdrive/c/Labaplus/lab-01-parser/CMakeLists.txt;52;add_test;/cygdrive/c/Labaplus/lab-01-parser/CMakeLists.txt;0;")
+set_tests_properties(unit_tests PROPERTIES  _BACKTRACE_TRIPLES "/cygdrive/c/Labaplus/lab-01-parser/CMakeLists.txt;58;add_test;/cygdrive/c/Labaplus/lab-01-parser/CMakeLists.txt;0;")
